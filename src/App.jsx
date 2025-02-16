@@ -1,5 +1,4 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import clsx from "clsx";
 import { IoHomeOutline } from "react-icons/io5";
 import { RiNewspaperLine } from "react-icons/ri";
 import { FaGolang } from "react-icons/fa6";
@@ -15,14 +14,24 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import { SiKubernetes } from "react-icons/si";
 
 export default function App() {
+
+  const sendEmail = () => {
+    const recipient = "sharmavivek1709@gmail.com";
+    const subject = encodeURIComponent("lets connect and create something");
+    const body = encodeURIComponent("Hey Vivek, I found your portfolio and wanted to connect!");
+  
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+  };
+
+
   const skills = [
     { icon: <FaGolang />, name: "Golang", hcolor: "blue-400" },
     { icon: <TbBrandCpp />, name: "C++", hcolor: "blue-400" },
-    { icon: <FaPython />, name: "Python", hcolor: "IconYellow" },
+    { icon: <FaPython />, name: "Python", hcolor: "green-400" },
     {
       icon: <IoLogoJavascript />,
       name: "JavaScript",
-      hcolor: "IconYellow",
+      hcolor: "yellow-400",
     },
     { icon: <IoLogoReact />, name: "React", hcolor: "blue-400" },
     {
@@ -31,8 +40,8 @@ export default function App() {
       hcolor: "blue-400",
     },
     { icon: <FaDocker />, name: "Docker", hcolor: "blue-400" },
-    { icon: <FaNodeJs />, name: "Node.js", hcolor: "Icongreen" },
-    { icon: <FaAws />, name: "AWS", hcolor: "IconYellow" },
+    { icon: <FaNodeJs />, name: "Node.js", hcolor: "green-400" },
+    { icon: <FaAws />, name: "AWS", hcolor: "yellow-400" },
     {
       icon: <BiLogoPostgresql />,
       name: "Postgres",
@@ -55,9 +64,22 @@ export default function App() {
             </button>
           </div>
           <div className="flex space-x-4">
-            <FaEnvelope className="text-xl cursor-pointer hover:text-gray-400 rounded-md text-white" />
-            <FaGithub className="text-xl cursor-pointer hover:text-gray-400 text-white" />
-            <FaLinkedin className="text-xl cursor-pointer hover:text-gray-400 text-white" />
+            <FaEnvelope className="text-xl cursor-pointer hover:text-gray-400 rounded-md text-white"  onClick={sendEmail}/>
+            <FaGithub
+              className="text-xl cursor-pointer hover:text-gray-400 text-white"
+              onClick={() => {
+                window.open("https://github.com/vviveksharma", "_blank");
+              }}
+            />
+            <FaLinkedin
+              className="text-xl cursor-pointer hover:text-gray-400 text-white"
+              onClick={() => {
+                window.open(
+                  "https://www.linkedin.com/in/vivek-sharma-207776187/",
+                  "_blank"
+                );
+              }}
+            />
           </div>
         </div>
 
@@ -85,10 +107,27 @@ export default function App() {
           <h2 className="text-2xl font-semibold font-mb-4 font-Roboto text-white">
             Projects
           </h2>
+          <ul className="mt-4 list-disc ml-6 space-y-1">
+            <li className="text-sm font-Atkinson font-light text-gray-400">
+              <u className="text-white cursor-pointer" onClick={() => {window.open("https://github.com/Password-Management")}}>Password Management System</u> RSA and
+              ASA based encyption system to store password.
+            </li>
+            <li className="text-sm font-Atkinson font-light text-gray-400">
+              <u className="text-white cursor-pointer" onClick={()=>{window.open("https://github.com/vviveksharma/Voting-System")}}>Voting system</u> hasing based voting
+              system for vote safety.
+            </li>
+            <li className="text-sm font-Atkinson font-light text-gray-400">
+              <u className="text-white cursor-pointer" onClick={() => {window.open("https://github.com/vviveksharma/BlockChain")}}>BlockChain</u> golang based blockchain.
+            </li>
+            <li className="text-sm font-Atkinson font-light text-gray-400">
+              <u className="text-white cursor-pointer" onClick={()=>{window.open("https://github.com/vviveksharma/Anime-Recommendation-System")}}>Anime Recomendation System</u> on
+              content based fitering and hosted using flask.
+            </li>
+          </ul>
           <div className=" p-4">Add your projects here...</div>
         </div>
         <div>
-          <h2 className="text-2xl font-semibold font-Roboto mb-4 text-white">
+          <h2 className="text-2xl font-semibold font-Roboto  text-white">
             Skills
           </h2>
           <div className="flex flex-wrap gap-6 text-xl">
@@ -98,7 +137,7 @@ export default function App() {
                 className="group relative flex flex-col items-center"
               >
                 <span
-                  className={`text-white text-3xl hover:text-${skill.hcolor}`}
+                  className={`text-white text-3xl hover:text-${skill.hcolor})`}
                 >
                   {skill.icon}
                 </span>
