@@ -1,6 +1,11 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
 
-body {
-  font-family: 'Atkinson Hyperlegible', sans-serif;
+
+@theme {
+  --font-Atkinson : Atkinson Hyperlegible Next, "sans-serif";
+  --font-Roboto: Roboto, "sans-serif";
+  --color-Icongreen: #6B9071;
+  --color-IconYellow: #FFD000;
 }
