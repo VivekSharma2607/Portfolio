@@ -60,7 +60,11 @@ export default function App() {
             </button>
             <button className="flex items-center space-x-2 text-sm font-semibold text-white px-4 py-2 rounded-md hover:bg-gray-700 hover:text-gray-400">
               <RiNewspaperLine className="text-md" />
-              <span>Blogs</span>
+              <span
+              onClick={() => {
+                window.open("https://medium.com/@sharmavivek1709", "_blank");
+              }}
+              >Blogs</span>
             </button>
           </div>
           <div className="flex space-x-4">
