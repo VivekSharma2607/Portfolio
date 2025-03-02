@@ -56,11 +56,11 @@ export default function App() {
           <div className="flex ">
             <button className="flex items-center space-x-1 text-sm font-semibold text-white px-4 py-2 rounded-md hover:bg-gray-700 hover:text-gray-400">
               <IoHomeOutline className="text-md" />
-              <span>Home</span>
+              <span className="cursor-pointer">Home</span>
             </button>
             <button className="flex items-center space-x-2 text-sm font-semibold text-white px-4 py-2 rounded-md hover:bg-gray-700 hover:text-gray-400">
               <RiNewspaperLine className="text-md" />
-              <span
+              <span className="cursor-pointer"
               onClick={() => {
                 window.open("https://medium.com/@sharmavivek1709", "_blank");
               }}
